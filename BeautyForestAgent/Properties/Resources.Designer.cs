@@ -63,6 +63,16 @@ namespace BeautyForestAgent.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap _64943726_346069669412049_6811846327916298240_n {
+            get {
+                object obj = ResourceManager.GetObject("64943726_346069669412049_6811846327916298240_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap demo {
             get {
                 object obj = ResourceManager.GetObject("demo", resourceCulture);
