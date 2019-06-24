@@ -11,6 +11,10 @@ namespace BeautyForestAgent
 {
     public partial class FormAbout : Form
     {
+        public string Title
+        {
+            set { this.Text = value; }
+        }
         public FormAbout()
         {
             InitializeComponent();

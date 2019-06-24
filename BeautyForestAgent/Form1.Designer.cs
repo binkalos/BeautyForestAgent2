@@ -34,13 +34,11 @@
             this.btnTray = new System.Windows.Forms.Button();
             this.btnModify = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ntiTray = new System.Windows.Forms.NotifyIcon(this.components);
             this.cmsMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.폼보이기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.끝내기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.파일ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.끝내기ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.창띄우기ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,13 +46,14 @@
             this.modalessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.도움말ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.이프로그램은ModalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.이프로그램은ModalessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusTitle = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusMessage = new System.Windows.Forms.ToolStripStatusLabel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cmsMenu.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -63,7 +62,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(466, 14);
             this.label1.TabIndex = 1;
-            this.label1.Text = "(주)미림스쿨 - Beauty Forest Agent v0.2 by [학번] [이름]";
+            this.label1.Text = "(주)미림스쿨 - Beauty Forest Agent v0.2 by 3112 이규빈";
             // 
             // btnTray
             // 
@@ -85,6 +84,7 @@
             this.btnModify.TabIndex = 3;
             this.btnModify.Text = "수정";
             this.btnModify.UseVisualStyleBackColor = false;
+            this.btnModify.Click += new System.EventHandler(this.BtnModify_Click);
             // 
             // btnAdd
             // 
@@ -95,17 +95,7 @@
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "추가";
             this.btnAdd.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::BeautyForestAgent.Properties.Resources.demo;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 28);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(727, 239);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // ntiTray
             // 
@@ -149,6 +139,59 @@
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // 파일ToolStripMenuItem
+            // 
+            this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.끝내기ToolStripMenuItem1});
+            this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
+            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.파일ToolStripMenuItem.Text = "파일";
+            // 
+            // 끝내기ToolStripMenuItem1
+            // 
+            this.끝내기ToolStripMenuItem1.Name = "끝내기ToolStripMenuItem1";
+            this.끝내기ToolStripMenuItem1.Size = new System.Drawing.Size(110, 22);
+            this.끝내기ToolStripMenuItem1.Text = "끝내기";
+            this.끝내기ToolStripMenuItem1.Click += new System.EventHandler(this.끝내기ToolStripMenuItem1_Click);
+            // 
+            // 창띄우기ToolStripMenuItem
+            // 
+            this.창띄우기ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.modalToolStripMenuItem,
+            this.modalessToolStripMenuItem});
+            this.창띄우기ToolStripMenuItem.Name = "창띄우기ToolStripMenuItem";
+            this.창띄우기ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.창띄우기ToolStripMenuItem.Text = "프로필";
+            // 
+            // modalToolStripMenuItem
+            // 
+            this.modalToolStripMenuItem.Name = "modalToolStripMenuItem";
+            this.modalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modalToolStripMenuItem.Text = "수정";
+            this.modalToolStripMenuItem.Click += new System.EventHandler(this.ModalToolStripMenuItem_Click);
+            // 
+            // modalessToolStripMenuItem
+            // 
+            this.modalessToolStripMenuItem.Name = "modalessToolStripMenuItem";
+            this.modalessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.modalessToolStripMenuItem.Text = "추가";
+            this.modalessToolStripMenuItem.Click += new System.EventHandler(this.ModalessToolStripMenuItem_Click);
+            // 
+            // 도움말ToolStripMenuItem
+            // 
+            this.도움말ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.이프로그램은ModalToolStripMenuItem});
+            this.도움말ToolStripMenuItem.Name = "도움말ToolStripMenuItem";
+            this.도움말ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.도움말ToolStripMenuItem.Text = "도움말";
+            // 
+            // 이프로그램은ModalToolStripMenuItem
+            // 
+            this.이프로그램은ModalToolStripMenuItem.Name = "이프로그램은ModalToolStripMenuItem";
+            this.이프로그램은ModalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.이프로그램은ModalToolStripMenuItem.Text = "이 프로그램은...";
+            this.이프로그램은ModalToolStripMenuItem.Click += new System.EventHandler(this.이프로그램은ModalToolStripMenuItem_Click);
+            // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -161,62 +204,6 @@
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
-            // 파일ToolStripMenuItem
-            // 
-            this.파일ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.끝내기ToolStripMenuItem1});
-            this.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem";
-            this.파일ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.파일ToolStripMenuItem.Text = "파일";
-            // 
-            // 끝내기ToolStripMenuItem1
-            // 
-            this.끝내기ToolStripMenuItem1.Name = "끝내기ToolStripMenuItem1";
-            this.끝내기ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.끝내기ToolStripMenuItem1.Text = "끝내기";
-            // 
-            // 창띄우기ToolStripMenuItem
-            // 
-            this.창띄우기ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.modalToolStripMenuItem,
-            this.modalessToolStripMenuItem});
-            this.창띄우기ToolStripMenuItem.Name = "창띄우기ToolStripMenuItem";
-            this.창띄우기ToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.창띄우기ToolStripMenuItem.Text = "창 띄우기";
-            // 
-            // modalToolStripMenuItem
-            // 
-            this.modalToolStripMenuItem.Name = "modalToolStripMenuItem";
-            this.modalToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modalToolStripMenuItem.Text = "Modal";
-            // 
-            // modalessToolStripMenuItem
-            // 
-            this.modalessToolStripMenuItem.Name = "modalessToolStripMenuItem";
-            this.modalessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.modalessToolStripMenuItem.Text = "Modaless";
-            // 
-            // 도움말ToolStripMenuItem
-            // 
-            this.도움말ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.이프로그램은ModalToolStripMenuItem,
-            this.이프로그램은ModalessToolStripMenuItem});
-            this.도움말ToolStripMenuItem.Name = "도움말ToolStripMenuItem";
-            this.도움말ToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
-            this.도움말ToolStripMenuItem.Text = "도움말";
-            // 
-            // 이프로그램은ModalToolStripMenuItem
-            // 
-            this.이프로그램은ModalToolStripMenuItem.Name = "이프로그램은ModalToolStripMenuItem";
-            this.이프로그램은ModalToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.이프로그램은ModalToolStripMenuItem.Text = "이 프로그램은...(Modal)";
-            // 
-            // 이프로그램은ModalessToolStripMenuItem
-            // 
-            this.이프로그램은ModalessToolStripMenuItem.Name = "이프로그램은ModalessToolStripMenuItem";
-            this.이프로그램은ModalessToolStripMenuItem.Size = new System.Drawing.Size(217, 22);
-            this.이프로그램은ModalessToolStripMenuItem.Text = "이 프로그램은...(Modaless)";
-            // 
             // statusTitle
             // 
             this.statusTitle.Name = "statusTitle";
@@ -228,6 +215,17 @@
             this.statusMessage.Name = "statusMessage";
             this.statusMessage.Size = new System.Drawing.Size(12, 17);
             this.statusMessage.Text = "-";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::BeautyForestAgent.Properties.Resources.demo;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 28);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(727, 239);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -250,12 +248,12 @@
             this.Name = "Form1";
             this.Text = "Beauty Forest Agent v0.2 by 3112이규빈";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.cmsMenu.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -281,7 +279,6 @@
         private System.Windows.Forms.ToolStripMenuItem modalessToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 도움말ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 이프로그램은ModalToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 이프로그램은ModalessToolStripMenuItem;
         private System.Windows.Forms.ToolStripStatusLabel statusTitle;
         private System.Windows.Forms.ToolStripStatusLabel statusMessage;
     }
